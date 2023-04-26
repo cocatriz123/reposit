@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Cc</title>
+  </head>
+  <header>
+     <h1>Cadastro</h1>
+  </header>
+  <body>
+    <div class="box">
+      <div class="form">
+          <form action="#" method="GET">
+
+        <h2>Qual o número e a senha do seu Numero aleatorio?</h2>
+<u>essas informações são usadas apenas pra validar seu cadastro. Elas não são gravadas nem transmitidas a ninguém.</u>
+        <div class="inputBox">
+            <div class="d1">
+          <input type="text" required="required" id="ncard"/>
+          <span class="oi">Numero aleatorio</span>
+          
+          </div>
+        </div>
+
+        <div class="inputBox">
+            <div class="d2">
+            <div class="pwd-input">
+          <input type="password" id="pwd" required="required" maxlength="6" oninput="updatePassword()"  />
+        <div class="pwd-balls"> </div> </div> <div class="spansenha">
+          <span>Senha do logim</span>
+          </div>
+          </div>
+          
+</div>
+          <div class="checkboia">
+<input type="checkbox" id="termos" value="Li e concordo com os termos de uso"/>
+	<label for="termos">Li e concordo com os</label>
+	<label for="termos" class="label-azul">termos de uso</label> 
+
+	<br>
+
+	<input type="checkbox" id="novidades" value="Aceito receber SMS e e-mail com novidades"/>
+	<label for="novidades" class="label-preto">Aceito receber SMS e e-mail com novidades.</label>
+	</div>
+         </div>
+         
+        </div>
+        
+        <input type="submit" class="btn" value="Continuar" />
+        
+
+        </form>
+    
+    
+  </body>
+<style>
+
+@font-face{font-family: "Cabin";
+   src: url("..CabinCondensed-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+html{justify-content: center;
+    align-items: center;
+}
+h1{ color: #fff;
+    z-index: 999;
+    font-size:18px;
+   
+}
+
+body {
+  display: flex;
+  min-height: 660px;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+ 
+}
+
+.box{
+    margin-top: 80px;
+  position: relative;
+  width: 600px;
+  height: 520px;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  text-align: center;
+}
+
+
+
+.form {
+  position: absolute;
+  inset: 2px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+header{ position: absolute;
+       background-color: #DC143C ;
+       max-width:100vw;
+       height: 17%;
+       margin: 0;
+       padding: 0;
+       display: flex;
+  inset: 0px;
+   justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    z-index: -999;
+}
+.form h2{ font-family: "Cabin", Sans-Serif;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.7px;
+  font-size: 18px;
+  margin-top: 5px;
+  max-width: 300px;
+  margin-left: 20px;
+}
+ 
+
+.inputBox {
+    margin-left: 27px;
+  position: relative;
+  width: 300px;
+  margin-top: 0px;
+}
+.d2{
+    margin-top: 40px;
+
+}
+.inputBox input {
+position: relative;
+  width: 100%;
+  padding: 0px 0px 0px;
+  background: transparent;
+  border-left:none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  margin-top: 50px;
+}
+
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  font-size: 1em;
+  color: grey;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  margin-top: 0px;}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span 
+{
+  color: blue!important;
+  transform: translateX(0) translateY(-10px)!important; font-weight: 400;
+  font-size: 0.75em;
+}
+    .oi{
+        top:50px;
+    }
+
+    #ncard{
+        top:20px;
+    }
+
+
+
+input[type="submit"] {
+  border: none;
+  outline: none;
+  background: #DC143C;
+   height: 39px;
+  width: 268px;
+  margin-top: 380px;
+  border-radius:50px ;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  z-index: 999;
+  
+}
+.btn:disabled{
+    opacity: .4;
+    color: black;
+    background: grey;
+}
+
+input[type="checkbox"] {
+		  display: none;
+
+		}
+
+		input[type="checkbox"] + label::before {
+		  content: "";
+		  display: inline-block;
+		  width: 20px;
+		  height: 20px;
+		  margin-right: 10px;
+		  border: 1px solid blue;
+		  border-radius: 3px;
+		  justify-content: center;
+		   margin-bottom: -6px;
+		   margin-top: 10px;
+
+		}
+
+		input[type="checkbox"]:checked + label::before {
+		  content: "✓";
+		  font-size: 17px;
+		  text-align: center;
+		  color: #fff;
+		  background-color: #007bff;
+		  
+		}
+
+		label {
+display:inline-block;
+		 
+		vertical-align: justify;
+        font-size: 16px;
+        justify-content:column;
+         
+position: relative;
+        font-size: 15px;
+         max-width: 300px;
+         text-align: center;
+		  
+}
+		
+
+		.label-azul {
+		  color: #007bff;
+		}
+
+		.label-preto {
+		  color: #000000;
+		}
+
+.checkboia{ margin-top: 10px;
+            position: relative;;
+            
+}
+
+.box u{ display: inline-block;
+        position: relative;
+    text-decoration: none;
+        color: black;
+        font-size: 15px;
+         max-width: 320px;
+         text-align: justify;
+         content:"";
+        margin-top: 13px;
+}
+/*
+input[type="password"] {
+  border-right: none;
+  border-left: none;
+   border-top: none;
+  z-index: 999;
+  color: transparent;
+  width:300px;
+  top: ;
+}
+
+.pwd-input {
+  position: relative;
+  
+}
+
+
+
+.pwd-balls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 210px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pwd-balls .ball {
+width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: black;
+}
+
+.spansenha span {
+  position: relative;
+  transform-origin: top left;
+  transform: translate(10px, 25px) scale(1);
+  transition: all .3s ease-out;
+  pointer-events: none;
+  color: #505050;
+}
+
+#pwd:focus+.spansenha span {
+  transform: translate(10px, 3px) scale(0.8);
+  color: blue;
+  font-size: 12px;
+}
+
+*/
+
+
+
+input[type="password"] {
+  border-right: none;
+  border-left: none;
+   border-top: none;
+  z-index: 999;
+  color: transparent;
+  width:300px;
+  top: ;
+}
+
+.pwd-input {
+  position:relative;
+  top: -20px;
+}
+
+.pwd-input label {
+  position: absolute;
+ 
+  left: 10px;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  font-size: 14px;
+  color: #505050;
+  transition: all .3s ease-out;
+  pointer-events: none;
+  
+}
+
+.pwd-input input:focus + label,
+.pwd-input input:not(:placeholder-shown) + label {
+  transform: translateY(-100%) scale(0.8);
+  font-size: 12px;
+  color: blue;
+}
+
+.pwd-balls {
+  display: flex;
+  top:30px;
+  position: absolute;
+  z-index: 999;
+}
+
+.pwd-balls .pwd-ball {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 24px;
+  justify-content: space-between;
+
+}
+
+.pwd-balls .pwd-ball.pwd-filled {
+  background-color: black;
+}
+
+
+</style>
+  <script type="text/javascript" src="js/login.js">
+      
+  </script>
+
+<script>
+
+
+function updatePassword() {
+  let pwdInput = document.getElementById("pwd");
+  let pwdBalls = document.querySelector(".pwd-balls");
+  let pwd = pwdInput.value;
+
+  while (pwdBalls.firstChild) {
+    pwdBalls.removeChild(pwdBalls.firstChild);
+  }
+  for (let i = 0; i < pwd.length; i++) {
+    let ball = document.createElement("div");
+    ball.classList.add("ball");
+    pwdBalls.appendChild(ball);
+  }
+}
+
+
+
+</script>
+</html>
