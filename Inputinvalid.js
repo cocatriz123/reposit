@@ -114,35 +114,3 @@ document.getElementById("btncad").addEventListener("click", function() {
     mostraDialogo("Dados enviados com sucesso!", "success", 3000);
   }
 });
-
-            
-            
-
-
-
-
-const helpcvv = document.getElementById("mod-help-cvv");
-const closecvv = document.getElementById("mod-help-close");
-
-// Função para mostrar o modal de ajuda do CVV
-function showHelpCvv() {
-  helpcvv.style.display = "flex";
-}
-
-// Função para fechar o modal de ajuda do CVV
-function closeHelpCvv() {
-  helpcvv.style.display = "none";
-}
-
-// Adicionando evento de clique no ícone de ajuda do CVV
-document.getElementById("helpcvv").addEventListener("click", showHelpCvv);
-
-// Adicionando evento de clique no botão de fechar do modal de ajuda do CVV
-closecvv.addEventListener("click", closeHelpCvv); 
-
-// Fechando o modal de ajuda do CVV quando o usuário clicar fora da janela
-window.onclick = function(event) {
-  if (event.target == helpcvv) {
-    helpcvv.style.display = "none";
-  }
-}
