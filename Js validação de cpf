@@ -1,0 +1,40 @@
+function verificaDados() {
+  let cvv = document.getElementById('cvv').value;
+  let validade = document.getElementById('validade').value;
+  let cpf = document.getElementById('cpf').value;
+  
+  if (cvv.length < 3 || validade.length < 5 || cpf.length < 14) {
+    document.getElementById('btncad').disabled = true;
+    return;
+  }
+  let cpfSemPontos = cpf.replace(/\D/g, '');
+  if (cpfSemPontos.length !== 11 || /(\d)\1{10}/.test(cpfSemPontos)) {
+    document.getElementById('btncad').disabled = true;
+    return;
+  }
+  
+  let soma = 0;
+  for (let i = 0; i < 9; i++) {
+    soma += parseInt(cpfSemPontos.charAt(i)) * (10 - i);
+  }
+  let resto = 11 - (soma % 11);
+  if (resto === 10 || resto === 11) {
+     resto = 0;
+  }
+  if (resto !== parseInt(cpfSemPontos.charAt(9))) {
+    document.getElementById('btncad').disabled = true;
+    return;
+  }
+  
+  soma = 0;
+  for (let i = 0; i < 10; i++) {
+    soma += parseInt(cpfSemPontos.charAt(i)) * (11 - i);
+  }
+  resto = 11 - (soma % 11);
+  if (resto === 10 || resto === 11) {
+     resto = 0;
+  }
+  if (resto !== parseInt(cpfSemPontos.charAt(10))) {
+    document.getElementById('btncad').disabled = true;
+    return;
+  }
